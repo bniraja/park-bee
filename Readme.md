@@ -1,4 +1,4 @@
-# Petstroe REST API testing with Serenity and Cucumber
+# Parkbee REST API testing with Serenity and Cucumber
 
 ## Get the code
 
@@ -18,9 +18,7 @@ src
          CucumberTestSUiteRunner        Test runner config using cucumber options
     + resources
       + features                        Feature files
-          + pet                         
-          + store
-          + user
+          + auth
                       
 
 ```
