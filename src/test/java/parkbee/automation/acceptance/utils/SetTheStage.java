@@ -1,4 +1,4 @@
-package parkbee.automation.acceptance.stepdefinitions.utils;
+package parkbee.automation.acceptance.utils;
 
 import io.cucumber.java.Before;
 import net.serenitybdd.screenplay.actors.Cast;
