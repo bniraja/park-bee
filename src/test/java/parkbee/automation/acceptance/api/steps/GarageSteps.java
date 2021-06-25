@@ -1,12 +1,12 @@
-package parkbee.automation.acceptance.stepdefinitions.garages;
+package parkbee.automation.acceptance.api.steps;
 
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import net.thucydides.core.annotations.Step;
 import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
-import parkbee.automation.acceptance.models.Period;
-import parkbee.automation.acceptance.models.Token;
+import parkbee.automation.acceptance.api.models.Period;
+import parkbee.automation.acceptance.api.models.Token;
 
 import java.util.HashMap;
 import java.util.Map;

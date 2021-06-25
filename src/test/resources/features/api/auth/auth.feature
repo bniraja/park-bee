@@ -1,4 +1,4 @@
-Feature: Operations to get token
+Feature: BearerToken
 
   @Positive-Scenarios
   Scenario Outline: A api POST call with User API with valid end point to get bearer token

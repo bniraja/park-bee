@@ -4,7 +4,7 @@
 
 Git:
 
-    git clone https://gitlab.com/neeraja-b.v/parkbee.git
+    git clone https://github.com/bniraja/park-bee.git
    
 ### The project directory structure
 The project has build scripts for both Maven and Gradle, and follows the standard directory structure used in most Serenity projects:
@@ -52,6 +52,8 @@ Goals:
 It must be “verify” 
 
 for eg., Maven commands: mvn clean verify
+with environment 
+mvn verify -Denvironment=dev
 
 ## Living documentation
 You can generate full Serenity reports by running `mvn clean verify`.

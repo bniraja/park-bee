@@ -1,4 +1,4 @@
-package parkbee.automation.acceptance.models;
+package parkbee.automation.acceptance.api.models;
 
 import lombok.Data;
 

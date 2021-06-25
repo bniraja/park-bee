@@ -1,17 +1,15 @@
-package parkbee.automation.acceptance.stepdefinitions.garages;
+package parkbee.automation.acceptance.api.stepdefinitions.garages;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
-import parkbee.automation.acceptance.models.Period;
-import parkbee.automation.acceptance.models.Token;
-import parkbee.automation.acceptance.stepdefinitions.auth.AuthSteps;
+import parkbee.automation.acceptance.api.models.Period;
+import parkbee.automation.acceptance.api.models.Token;
+import parkbee.automation.acceptance.api.steps.AuthSteps;
+import parkbee.automation.acceptance.api.steps.GarageSteps;
 import parkbee.automation.acceptance.utils.EnvironmentUtilsSteps;
 
 public class CalculatePrice {
-
-
-
     @Steps
     private GarageSteps garageSteps;
 

@@ -1,4 +1,4 @@
-package parkbee.automation.acceptance.stepdefinitions.auth;
+package parkbee.automation.acceptance.api.steps;
 
 import io.restassured.response.Response;
 import net.serenitybdd.rest.SerenityRest;
@@ -8,8 +8,8 @@ import org.apache.http.HttpStatus;
 import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
 import parkbee.automation.acceptance.JobContext;
-import parkbee.automation.acceptance.exception.TokenNotFoundException;
-import parkbee.automation.acceptance.models.Token;
+import parkbee.automation.acceptance.api.exception.TokenNotFoundException;
+import parkbee.automation.acceptance.api.models.Token;
 import parkbee.automation.acceptance.utils.EnvironmentUtilsSteps;
 
 import static net.serenitybdd.rest.SerenityRest.rest;

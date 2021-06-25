@@ -1,7 +1,7 @@
 package parkbee.automation.acceptance;
 
-import parkbee.automation.acceptance.exception.TokenNotFoundException;
-import parkbee.automation.acceptance.models.Token;
+import parkbee.automation.acceptance.api.exception.TokenNotFoundException;
+import parkbee.automation.acceptance.api.models.Token;
 
 import java.util.HashMap;
 import java.util.Map;

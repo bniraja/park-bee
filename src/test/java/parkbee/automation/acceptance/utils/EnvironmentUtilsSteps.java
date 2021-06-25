@@ -1,13 +1,13 @@
 package parkbee.automation.acceptance.utils;
 
 import net.serenitybdd.core.environment.EnvironmentSpecificConfiguration;
-import net.thucydides.core.annotations.Step;
 import net.thucydides.core.util.EnvironmentVariables;
-
+//TODO
 public class EnvironmentUtilsSteps {
     public static final String TOKEN_BASE_URL = "token.base.url";
     public static final String API_BASE_URL = "api.base.url";
     public static final String CLIENT_ID = "client.id";
+    public static final String WEBDRIVER_BASE_URL = "webdriver.base.url";
     private EnvironmentVariables environmentVariables;
 
     public String getTokenUrl() {
@@ -24,9 +24,14 @@ public class EnvironmentUtilsSteps {
         return EnvironmentSpecificConfiguration.from(environmentVariables)
             .getProperty(CLIENT_ID);
     }
-
+  //TODO:
     public String getClientSecretKey() {
         return EnvironmentSpecificConfiguration.from(environmentVariables)
             .getProperty("client.secret");
+    }
+
+    public String getUIUrl() {
+        return EnvironmentSpecificConfiguration.from(environmentVariables)
+            .getProperty(WEBDRIVER_BASE_URL);
     }
 }

@@ -1,4 +1,4 @@
-package parkbee.automation.acceptance.exception;
+package parkbee.automation.acceptance.api.exception;
 
 public class TokenNotFoundException extends Throwable {
 

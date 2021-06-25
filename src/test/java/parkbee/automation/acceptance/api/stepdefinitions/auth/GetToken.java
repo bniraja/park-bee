@@ -1,4 +1,4 @@
-package parkbee.automation.acceptance.stepdefinitions.auth;
+package parkbee.automation.acceptance.api.stepdefinitions.auth;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -6,8 +6,8 @@ import net.serenitybdd.core.annotations.events.BeforeScenario;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.util.EnvironmentVariables;
 import org.junit.Assert;
-import parkbee.automation.acceptance.exception.TokenNotFoundException;
-import parkbee.automation.acceptance.stepdefinitions.garages.GetGarages;
+import parkbee.automation.acceptance.api.exception.TokenNotFoundException;
+import parkbee.automation.acceptance.api.steps.AuthSteps;
 import parkbee.automation.acceptance.utils.EnvironmentUtilsSteps;
 
 public class GetToken {
@@ -21,9 +21,6 @@ public class GetToken {
     private AuthSteps authSteps;
 
     @Steps
-    private GetGarages getGarages;
-
-    @Steps
     private EnvironmentUtilsSteps environmentUtilsSteps;
 
     @BeforeScenario
@@ -33,16 +30,6 @@ public class GetToken {
         clientSecret = environmentUtilsSteps.getClientSecretKey();
     }
 
-
-//    @When("user call the retrieve a token endpoint")
-//    public void user_call_the_retrieve_a_token_endpoint() {
-//        Assert.assertNotNull(tokenBaseUrl);
-//        Assert.assertNotNull(clientId);
-//        Assert.assertNotNull(clientSecret);
-//        authSteps.getToken(tokenBaseUrl, clientId, clientSecret);
-//
-//    }
-
     @Then("The response is returned with status {int}")
     public void the_response_is_returned_with_status(Integer responseCode) {
         authSteps.verifyTheStatus(responseCode);
@@ -51,7 +38,6 @@ public class GetToken {
     @Then("bearer token is stored for next api call")
     public void bearer_token_is_stored_for_next_api_call() throws TokenNotFoundException {
         authSteps.storeTheToken(clientId);
-        getGarages.getGarages(clientId);
     }
 
     @When("user make request for a token with {word},{string},{string} with secret key")
