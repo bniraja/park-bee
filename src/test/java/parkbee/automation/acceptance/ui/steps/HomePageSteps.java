@@ -30,4 +30,8 @@ public class HomePageSteps {
     public void verifyNearestLocation(String price) {
         homePage.verifyNearestLocation(price);
     }
+
+    public void verifyErrorThatOldDateDisabled(String currentDayPlus, String errorMessage) {
+        homePage.verifyDateIsDisabled(currentDayPlus, errorMessage);
+    }
 }

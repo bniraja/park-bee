@@ -1,13 +1,24 @@
 Feature: search
 
   @Positive-Scenarios
-  Scenario Outline: Display the prices for the given location and time
+  Scenario Outline: Display the prices for parking station the given location for 1 hour from now
     Given the user on the parkbee.com home page
-    When  user enter the <location>, <reservationtime> to reserve
-    Then user should see the <prices> of the nearest locations
+    When user enter the <location>, select current time to reserve
+    Then by default user should see the <price> for one hour for parking at nearest <parkingArea>
     Examples:
-      | location                             | reservationtime | prices  |
-      | "Nassaukade, Amsterdam, Netherlands" | "28"            | "€3,90" |
+      | location                             | parkingArea           | price   |
+      | "Nassaukade, Amsterdam, Netherlands" | "Van Beuningenstraat" | "€3,90" |
+
+  @Negative-Scenarios
+  Scenario Outline: Verify the error message when user select the past dates on date picker
+    Given the user on the parkbee.com home page
+    When user enter the <location>
+    Then select yesterday date to reserve and <error>
+    Examples:
+      | location                             | error              |
+      | "Nassaukade, Amsterdam, Netherlands" | "Date is disabled" |
 
 #//TODO
 #    reservation time is only date as of now need to change it to dd-mm-yyyy
+#  - check future dates are selected and
+#    - boundary check on the dates more than 3000

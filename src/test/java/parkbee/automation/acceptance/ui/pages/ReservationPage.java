@@ -5,7 +5,7 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import parkbee.automation.acceptance.ui.ElementIsDisabledException;
+import parkbee.automation.acceptance.ui.exception.ElementIsDisabledException;
 import parkbee.automation.acceptance.utils.DateUtil;
 
 import java.util.List;

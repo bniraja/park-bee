@@ -7,6 +7,7 @@ import net.thucydides.core.annotations.Steps;
 
 import parkbee.automation.acceptance.ui.steps.HomePageSteps;
 import parkbee.automation.acceptance.ui.steps.NavigateTo;
+import parkbee.automation.acceptance.utils.DateUtil;
 
 
 public class DisplayPrice {
@@ -20,17 +21,32 @@ public class DisplayPrice {
         navigateTo.homePage();
     }
 
-    @When("user enter the {string}, {string} to reserve")
-    public void user_enter_the_to_reserve(String destination, String time) {
+    @When("user enter the {string}, select current time to reserve")
+    public void user_enter_the_to_reserve(String destination) {
         homePageSteps.enterDestination(destination);
         //TODO time,year, change in time need to implement
-        homePageSteps.selectStartTime(time);
+        homePageSteps.selectStartTime(DateUtil.getCurrentDay());
         homePageSteps.confirmTime();
 
     }
-    @Then("user should see the {string} of the nearest locations")
-    public void user_should_see_the_of_the_nearest_locations(String price) {
+
+
+    @Then("by default user should see the {string} for one hour for parking at nearest {string}")
+    public void user_should_see_the_of_the_nearest_locations(String price, String parkingArea) {
         homePageSteps.verifyNearestLocation(price);
     }
 
+
+    @When("user enter the {string}")
+    public void user_enter_the_destination(String destination) {
+
+        homePageSteps.enterDestination(destination);
+
+    }
+
+    @Then("select yesterday date to reserve and {string}")
+    public void date_picker_should_be_disabled(String errorMessage) {
+        //TODO time,year, change in time need to implement
+        homePageSteps.verifyErrorThatOldDateDisabled(DateUtil.getCurrentDayPlus( -1),errorMessage);
+    }
 }

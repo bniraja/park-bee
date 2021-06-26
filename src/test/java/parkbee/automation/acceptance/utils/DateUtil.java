@@ -5,9 +5,8 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.TimeZone;
 
-import org.junit.Assert;
 import org.openqa.selenium.WebElement;
-import parkbee.automation.acceptance.ui.ElementIsDisabledException;
+import parkbee.automation.acceptance.ui.exception.ElementIsDisabledException;
 
 public class DateUtil {
     //Get The Current Day
@@ -24,8 +23,9 @@ public class DateUtil {
     //Get The Current Day plus days. You can change this method based on your needs.
     public static String getCurrentDayPlus(int days) {
         LocalDate currentDate = LocalDate.now();
-        int dayOfWeekPlus = currentDate.getDayOfWeek().plus(days).getValue();
-        return Integer.toString(dayOfWeekPlus);
+        int selectedDate = currentDate.getDayOfMonth() + days;
+//        int dayOfWeekPlus = currentDate.getDayOfWeek().plus(days).getValue();
+        return Integer.toString(selectedDate);
     }
 
     //Click to given day

@@ -6,13 +6,11 @@ import net.thucydides.core.annotations.DefaultUrl;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import parkbee.automation.acceptance.ui.ElementIsDisabledException;
+import parkbee.automation.acceptance.ui.exception.ElementIsDisabledException;
 import parkbee.automation.acceptance.utils.DateUtil;
 
-import java.time.Duration;
 import java.util.List;
 
 
@@ -58,5 +56,14 @@ public class HomePage extends PageObject {
             ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector("span.card__price"))).get(0);
 
         Assert.assertTrue("Expected prices is not same actual is:" + cardPrice.getText(), price.equalsIgnoreCase(cardPrice.getText()));
+    }
+
+    public void verifyDateIsDisabled(String day, String errorMessage) {
+        List<WebElement> allDates = getDriver().findElements(By.xpath("//table[@class='table-condensed']//td"));
+        try {
+            DateUtil.clickGivenDay(allDates, day);
+        } catch (ElementIsDisabledException e) {
+            Assert.assertTrue("Date is disabled",e.getMessage().contains(errorMessage));
+        }
     }
 }
