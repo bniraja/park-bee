@@ -13,6 +13,4 @@ Feature: price
      | nearbyparkingArea     | newprice |
      | "Van Beuningenstraat" | "€24,25" |
 
-#TODO Negative Scenarios
-#  Negative testcases
-#  - string selection of next month
+

@@ -13,8 +13,7 @@ public class CalculatePrice {
     @Steps
     private GarageSteps garageSteps;
 
-    @Steps
-    private EnvironmentUtilsSteps environmentUtilsSteps;
+
     @Steps
     private AuthSteps authSteps;
 

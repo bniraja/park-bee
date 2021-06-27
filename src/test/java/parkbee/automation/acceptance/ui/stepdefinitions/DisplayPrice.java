@@ -24,7 +24,7 @@ public class DisplayPrice {
     @When("user enter the {string}, select current time to reserve")
     public void user_enter_the_to_reserve(String destination) {
         homePageSteps.enterDestination(destination);
-        //TODO time,year, change in time need to implement
+
         homePageSteps.selectStartTime(DateUtil.getCurrentDay());
         homePageSteps.confirmTime();
 
@@ -46,7 +46,6 @@ public class DisplayPrice {
 
     @Then("select yesterday date to reserve and {string}")
     public void date_picker_should_be_disabled(String errorMessage) {
-        //TODO time,year, change in time need to implement
         homePageSteps.verifyErrorThatOldDateDisabled(DateUtil.getCurrentDayPlus( -1),errorMessage);
     }
 }

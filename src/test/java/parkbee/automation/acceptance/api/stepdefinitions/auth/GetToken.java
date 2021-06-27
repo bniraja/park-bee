@@ -49,7 +49,6 @@ public class GetToken {
     }
 
 
-
     @Then("application respond with status {int} and an {word}")
     public void application_respond_with_status_and_an_invalid_client(Integer responseCode, String error) {
         authSteps.verifyTheStatus(responseCode);

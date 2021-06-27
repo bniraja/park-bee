@@ -8,6 +8,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import parkbee.automation.acceptance.ui.exception.ElementIsDisabledException;
 import parkbee.automation.acceptance.utils.DateUtil;
 
@@ -16,10 +18,9 @@ import java.util.List;
 
 @DefaultUrl("page:home.page")
 public class HomePage extends PageObject {
-    public static final String SEARCH = "search";
     public static final int TIMEOUT_IN_MILISECOND = 12000;
     private static String DIRECTION_START = "directions__start";
-
+    private static Logger LOGGER = LoggerFactory.getLogger(HomePage.class);
     WebElementFacade destination;
 
     public void enterDestination(String destination) {
@@ -48,8 +49,7 @@ public class HomePage extends PageObject {
         try {
             Thread.sleep(TIMEOUT_IN_MILISECOND);
         } catch (InterruptedException e) {
-            //TODO
-            e.printStackTrace();
+            LOGGER.error("Error during sleep " + e.getMessage());
         }
 
         cardPrice = waitForCondition().until(
@@ -63,7 +63,7 @@ public class HomePage extends PageObject {
         try {
             DateUtil.clickGivenDay(allDates, day);
         } catch (ElementIsDisabledException e) {
-            Assert.assertTrue("Date is disabled",e.getMessage().contains(errorMessage));
+            Assert.assertTrue("Date is disabled", e.getMessage().contains(errorMessage));
         }
     }
 }

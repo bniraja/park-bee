@@ -3,10 +3,12 @@ package parkbee.automation.acceptance.api.steps;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import net.thucydides.core.annotations.Step;
+import net.thucydides.core.annotations.Steps;
 import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
 import parkbee.automation.acceptance.api.models.Period;
 import parkbee.automation.acceptance.api.models.Token;
+import parkbee.automation.acceptance.utils.EnvironmentUtilsSteps;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,12 +20,15 @@ public class GarageSteps {
     private static final int INITIAL_CAPACITY = 1;
     private Response response;
 
+    @Steps
+    private EnvironmentUtilsSteps environmentUtilsSteps;
+
     @Step
     public void calculatePriceForGivenGarage(String garageId, Period period, Token token) {
 
         Map<String, String> headers = new HashMap<>(INITIAL_CAPACITY);
         headers.put("Authorization", "Bearer " + token.getAccess_token());
-        response = rest().headers(headers).accept("*/*").contentType("application/json; charset=utf-8").baseUri("https://api-uat.parkbee.net/v1").body(period)
+        response = rest().headers(headers).accept("*/*").contentType("application/json; charset=utf-8").baseUri(environmentUtilsSteps.getApiBaseUrl()).body(period)
             .post("/garages/" + garageId + "/pricing/calculate");
     }
 

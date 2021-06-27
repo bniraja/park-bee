@@ -1,9 +1,12 @@
 package parkbee.automation.acceptance.ui.steps;
 
 import net.thucydides.core.annotations.Step;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import parkbee.automation.acceptance.ui.pages.HomePage;
 
 public class HomePageSteps {
+    private static Logger LOGGER = LoggerFactory.getLogger(HomePageSteps.class);
     private HomePage homePage;
 
     @Step("Enter the location")
@@ -16,8 +19,7 @@ public class HomePageSteps {
         try {
             homePage.selectStartTime(time);
         } catch (InterruptedException e) {
-            //TODO
-            e.printStackTrace();
+            LOGGER.error("Error during sleep " + e.getMessage());
         }
     }
 

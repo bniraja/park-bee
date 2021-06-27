@@ -2,7 +2,7 @@ package parkbee.automation.acceptance.utils;
 
 import net.serenitybdd.core.environment.EnvironmentSpecificConfiguration;
 import net.thucydides.core.util.EnvironmentVariables;
-//TODO
+
 public class EnvironmentUtilsSteps {
     public static final String TOKEN_BASE_URL = "token.base.url";
     public static final String API_BASE_URL = "api.base.url";
@@ -24,7 +24,7 @@ public class EnvironmentUtilsSteps {
         return EnvironmentSpecificConfiguration.from(environmentVariables)
             .getProperty(CLIENT_ID);
     }
-  //TODO:
+
     public String getClientSecretKey() {
         return EnvironmentSpecificConfiguration.from(environmentVariables)
             .getProperty("client.secret");

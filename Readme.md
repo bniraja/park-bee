@@ -63,3 +63,6 @@ This includes both the living documentation from the feature files:
 
 And also details of the REST requests and responses that were executed during the test:
 ![img.png](src/docs/img.png)
+
+For UI testing screenshots are also captured .
+![img.png](src/docs/ui-screenshots.png)

@@ -20,5 +20,6 @@ Feature: search
 
 #//TODO
 #    reservation time is only date as of now need to change it to dd-mm-yyyy
-#  - check future dates are selected and
+#   - check future dates are selected and
 #    - boundary check on the dates more than 3000
+#    - time,year, change in time need to implement
