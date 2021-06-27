@@ -1,8 +1,10 @@
 Feature: search
 
+  Background:
+    Given the user on the parkbee.com home page
+
   @Positive-Scenarios
   Scenario Outline: Display the prices for parking station the given location for 1 hour from now
-    Given the user on the parkbee.com home page
     When user enter the <location>, select current time to reserve
     Then by default user should see the <price> for one hour for parking at nearest <parkingArea>
     Examples:
@@ -11,7 +13,6 @@ Feature: search
 
   @Negative-Scenarios
   Scenario Outline: Verify the error message when user select the past dates on date picker
-    Given the user on the parkbee.com home page
     When user enter the <location>
     Then select yesterday date to reserve and <error>
     Examples:

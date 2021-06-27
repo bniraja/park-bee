@@ -58,11 +58,11 @@ mvn clean verify -Denvironment=dev
 You can generate full Serenity reports by running `mvn clean verify`.
 This includes both the living documentation from the feature files:
 
-![img.png](src/docs/summary.png)
-![img.png](src/docs/features-reactive.png)
+![img.png](src/docs/livedoc/summary.png)
+![img.png](src/docs/livedoc/features-reactive.png)
 
 And also details of the REST requests and responses that were executed during the test:
-![img.png](src/docs/img.png)
+![img.png](src/docs/livedoc/img.png)
 
 For UI testing screenshots are also captured .
-![img.png](src/docs/ui-screenshots.png)
+![img.png](src/docs/livedoc/ui-screenshots.png)
