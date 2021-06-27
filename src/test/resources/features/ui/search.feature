@@ -12,6 +12,7 @@ Feature: search
       | "Nassaukade, Amsterdam, Netherlands" | "Van Beuningenstraat" | "€3,90" |
 
   @Negative-Scenarios
+  @edge-cases
   Scenario Outline: Verify the error message when user select the past dates on date picker
     When user enter the <location>
     Then select yesterday date to reserve and <error>
