@@ -33,27 +33,26 @@ src
 
 You can generate full Serenity reports by running `mvn clean verify`. 
 
-You can Find test report in location '../target/site/serenity/'
+You can Find test report in directory '../target/site/serenity/'
 
 SERENITY REPORTS
-
+```
 Full Report: ../target/site/serenity/index.html
 
 Single Page HTML Summary: ../target/site/serenity/serenity-summary.html
 
 Full Report As React Based Single Page Application: ../target/site/serenity/navigator/index.html
+```
 
 ## Building the project
 mvn clean install
 
 ## Run tests locally?
 Goals:
-It must be “verify” 
-
-for eg., Maven commands: mvn clean verify
-with environment 
+It must be “verify” with environment .Currently, only dev environment variables are set in configuration file.
+````
 mvn clean verify -Denvironment=dev
-
+````
 ## Living documentation
 You can generate full Serenity reports by running `mvn clean verify`.
 This includes both the living documentation from the feature files:
