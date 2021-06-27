@@ -25,7 +25,7 @@ src
 
 ## Write new tests
 1. New Cucumber scenario can be added in '..\src\test\resources\features'
-2. Step definitions can be return in '..\src\test\java\parkbee\automation\acceptance\<ui/api>\stepdefinitions'
+2. Step definitions can be written in '..\src\test\java\parkbee\automation\acceptance\<ui/api>\stepdefinitions'
 3. Step definitions uses steps from 'xxxSteps' java classes 
  
 

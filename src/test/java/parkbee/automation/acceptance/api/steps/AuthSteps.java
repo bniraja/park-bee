@@ -22,7 +22,7 @@ public class AuthSteps {
     @Steps
     private EnvironmentUtilsSteps environmentUtilsSteps;
 
-    @Step
+    @Step("call the post operation to fetch bearer token")
     public void getToken(String clientId, String scope, String grantType) {
         response = rest().given()
             .baseUri(environmentUtilsSteps.getTokenUrl())
@@ -35,12 +35,12 @@ public class AuthSteps {
             .post(TOKEN_ENDPOINT);
     }
 
-    @Step
+    @Step("verify the response status code")
     public void verifyTheStatus(int statusCode) {
         Assert.assertEquals("Authentication Failed ", statusCode, response.getStatusCode());
     }
 
-    @Step
+    @Step("Store the token for future use")
     public void storeTheToken(String clientId) {
         Token token = response.as(Token.class);
         Assert.assertNotNull(token);
